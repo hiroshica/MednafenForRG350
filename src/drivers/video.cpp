@@ -717,7 +717,9 @@ void Video_SetWMInputBehavior(const WMInputBehavior& beeeeees)
  if(!grab)
   SDL_SetWindowGrab(window, SDL_FALSE);
 
+#if ((SDL_MAJOR_VERSION >=2) && (SDL_MINOR_VERSION >= 0) && (SDL_PATCHLEVEL >= 5))
  SDL_SetHint(SDL_HINT_WINDOWS_NO_CLOSE_ON_ALT_F4, grab ? "1" : "0");
+#endif
 }
 
 #if 0

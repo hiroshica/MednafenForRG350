@@ -2133,7 +2133,9 @@ int main(int argc, char *argv[])
 	#endif
 	// Place before calls to SDL_Init()
 	putenv(strdup("SDL_DISABLE_LOCK_KEYS=1"));
+#if ((SDL_MAJOR_VERSION >=2) && (SDL_MINOR_VERSION >= 0) && (SDL_PATCHLEVEL >= 5))
 	SDL_SetHint(SDL_HINT_NO_SIGNAL_HANDLERS, "1");
+#endif
 	SDL_SetHint(SDL_HINT_GRAB_KEYBOARD, "1");
 	//
 	//
